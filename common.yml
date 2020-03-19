@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  bionexo_ubs_api:
+    tty: true
+    stdin_open: true
+    build: .
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/bionexo_ubs_api
+    env_file:
+      - .env
