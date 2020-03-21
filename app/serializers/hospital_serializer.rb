@@ -4,6 +4,12 @@ class HospitalSerializer < ActiveModel::Serializer
              :address,
              :city,
              :phone,
-             :geocode_lat,
-             :geocode_long
+             :geocode
+
+  def geocode
+    {
+      lat:  object.geocode_lat,
+      long: object.geocode_long
+    }
+  end
 end
