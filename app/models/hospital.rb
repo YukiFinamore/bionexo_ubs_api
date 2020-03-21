@@ -1,5 +1,8 @@
 class Hospital < ApplicationRecord
   require 'csv'
+  acts_as_mappable default_units:   :kms,
+                   lat_column_name: :geocode_lat,
+                   lng_column_name: :geocode_long
 
   validates :geocode_lat,
             :geocode_long, presence: true
