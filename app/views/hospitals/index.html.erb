@@ -1,0 +1,31 @@
+<%= flash[:notice] %>
+
+<table>
+	<thead>
+		<tr>
+	    <th><%= Hospital.human_attribute_name(:name) %></th>
+	    <th><%= Hospital.human_attribute_name(:address) %></th>
+	    <th><%= Hospital.human_attribute_name(:city) %></th>
+	    <th><%= Hospital.human_attribute_name(:phone) %></th>
+	    <th><%= Hospital.human_attribute_name(:geocode_lat) %></th>
+	    <th><%= Hospital.human_attribute_name(:geocode_long) %></th>
+	  </tr>
+	</thead>
+
+	<tbody>
+		<% @hospitals.each do |hospital| %>
+			<%= render partial: "hospital", locals: {hospital: hospital} %>
+		<% end %>
+	</tbody>
+</table>
+
+<div>
+	<h4>Importar</h4>
+
+	<%= form_tag import_hospitals_path, multipart: true do %>
+		<%= file_field_tag :file %>
+		<%= submit_tag "Importar CSV" %>
+	<% end %>
+</div>
+
+<%= will_paginate @hospitals %>

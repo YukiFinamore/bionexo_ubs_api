@@ -1,0 +1,15 @@
+pt-BR:
+  boolean:
+    true: 'Sim'
+    false: 'Não'
+
+  activerecord:
+    models:
+    attributes:
+      hospital:
+        name: 'Nome'
+        address: 'Endereço'
+        city: 'Cidade'
+        phone: 'telefone'
+        geocode_lat: 'Latitude'
+        geocode_long: 'Longitude'
