@@ -1,7 +1,8 @@
 class HospitalsController < ApplicationController
   def index
-    @hospitals = Hospital.order('name').page(params[:page] || 1).per_page(30)
-
+    default_location = params[:location] ||= [-23.5428363, -46.637257]
+    
+    @hospitals = Hospital.within(5, origin: default_location)
     render(json: @hospitals, each_serializer: HospitalSerializer)
   end
 
