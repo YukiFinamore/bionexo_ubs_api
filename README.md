@@ -2,12 +2,14 @@
 
 The purpose of project is permit to user load an CSV file with all Ubs's from Brazil, save on database and through filters, user geolocations, get this infos and respond a json file to react app that render and show this infos to user.
 
+You can access the Reac App [here](https://github.com/YukiFinamore/bionexo_ubs)
+
 ## Installing
 
 Clone the project on your directory with this command line:
 
 ```
-git clone git@github.com:YukiFinamore/bionexo_ubs.git
+git clone git@github.com:YukiFinamore/bionexo_ubs_api.git
 ```
 
 ## Starting with Rails?
