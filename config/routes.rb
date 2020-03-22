@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     collection {post :import}
   end
 
-  root to: "hospitals#index"
+  root to: "api/v1/hospitals#index"
 end
