@@ -1,8 +1,8 @@
 # Bionexo Ubs Api
 
-The purpose of project is permit to user load an CSV file with all Ubs's from Brazil, save on database and through filters, user geolocations, get this infos and respond a json file to react app that render and show this infos to user.
+The purpose of project is permit to user load an CSV file with all Ubs's from Brazil, save on database and through filters, user geolocations and user navigation map, get the infos and respond a json file to react app that render and show this infos to user.
 
-You can access the Reac App [here](https://github.com/YukiFinamore/bionexo_ubs)
+You can access the React App [here](https://github.com/YukiFinamore/bionexo_ubs)
 
 ## Installing
 
@@ -15,17 +15,19 @@ git clone git@github.com:YukiFinamore/bionexo_ubs_api.git
 ## Starting with Rails?
 
 This project works with:
-* Rails 5.2 onwards. [installation guide](http://railsapps.github.io/installing-rails.html)
-* Ruby 2.6.3 [installation guide](https://www.ruby-lang.org/en/documentation/installation/)
-* Postgres Database [installation guide](https://www.postgresql.org/download/)
+* Rails 5.2 onwards. - [installation guide](http://railsapps.github.io/installing-rails.html)
+* Ruby 2.6.3 - [installation guide](https://www.ruby-lang.org/en/documentation/installation/)
+* Postgres Database - [installation guide](https://www.postgresql.org/download/)
 * Bundle 2.1.4
 
 After make sure this prerequisites are installed and configured, inside the directory project, run on your terminal: (Skip this step if you already have bundler installed)
+
 ```
 gem install bundler
 ```
 
 After that run:
+
 ```
 bundle install
 ```
@@ -71,7 +73,7 @@ production:
   
 ```
 
-After config your database file, create yout database with this commandline on your terminal:
+After config your database file, create your database with this command line on your terminal:
 
 ```
 bundle exec rake db:create
@@ -86,7 +88,7 @@ bundle exec rake db:migrate
 ## Starting with Docker?
 
 This project works with:
-* Docker 2.2.0.3 [installation guide](https://hub.docker.com/search?q=&type=edition&offering=community&sort=updated_at&order=desc)
+* Docker 2.2.0.3 - [installation guide](https://hub.docker.com/search?q=&type=edition&offering=community&sort=updated_at&order=desc)
 
 Configuring Docker Files:
 You can follow my guide to config Docker on your rails Project: [Configuring Docker on Your Rails Project](https://gist.github.com/YukiFinamore/e522886fa5cba2fa534654666eefc956)
