@@ -12,7 +12,7 @@ Clone the project on your directory with this command line:
 git clone git@github.com:YukiFinamore/bionexo_ubs_api.git
 ```
 
-## Starting with Rails?
+## Starting with Rails
 
 This project works with:
 * Rails 5.2 onwards. - [installation guide](http://railsapps.github.io/installing-rails.html)
@@ -21,31 +21,26 @@ This project works with:
 * Bundle 2.1.4
 
 After make sure this prerequisites are installed and configured, inside the directory project, run on your terminal: (Skip this step if you already have bundler installed)
+After install the project dependecies. Open the terminal and run (inside the project directory): 
 
 ```
 gem install bundler
 ```
 
-After that run:
+Install gems dependencies:
 
 ```
 bundle install
 ```
 
-Run the project with:
-
-```
-rails s
-```
-
-After that, config your `config/database.yml` file, if their doesn't exist, create them on `config` folder and setup them like this:
+After that, config your `config/database.yml` file:
 
 ```
 default: &defaults
   adapter: postgresql
-  host:     example: localhost
-  username: example: root
-  password: example: root
+  host:     [YOUR_DATABASE_HOST]
+  username: [YOUR_DATABASE_USERNAME]
+  password: [YOUR_DATABASE_PASSWORD]
   encoding: utf8
   min_messages: warning
   pool: 2
@@ -73,7 +68,14 @@ production:
   
 ```
 
-After config your database file, create your database with this command line on your terminal:
+After config your database file, you can run the project with this command line on your terminal:
+
+
+```
+rails s
+```
+
+With your project working, create your database with this command line on your terminal
 
 ```
 bundle exec rake db:create
@@ -85,15 +87,24 @@ If you got success message, run:
 bundle exec rake db:migrate
 ````
 
-## Starting with Docker?
+## Starting with Docker
 
 This project works with:
 * Docker 2.2.0.3 - [installation guide](https://hub.docker.com/search?q=&type=edition&offering=community&sort=updated_at&order=desc)
 
-Configuring Docker Files:
-You can follow my guide to config Docker on your rails Project: [Configuring Docker on Your Rails Project](https://gist.github.com/YukiFinamore/e522886fa5cba2fa534654666eefc956)
+Docker is already configured by default, but if you want more infos how to config your Rails project with docker you can follow my guide: [Configuring Docker on Your Rails Project](https://gist.github.com/YukiFinamore/e522886fa5cba2fa534654666eefc956)
 
-After make sure docker are installed and configured, inside the directory project, run on your terminal: 
+After make sure docker are installed, you want to create your own `.env` file on root project directory. You can get an example file with `.env.sample` name.
+
+Inside your own `.env` file, update this lines with your posgres config:
+
+```
+POSTGRES_HOST=[YOUR_POSTGRES_HOST]
+POSTGRES_USER=[YOUR_POSTGRES_USER]
+POSTGRES_PASSWORD=[YOUR_POSTGRES_PASSWORD]
+```
+
+With `.env` configured, we need to build docker to install all project dependencies, run on your terminal:
 
 ```
 docker-compose build
@@ -108,10 +119,10 @@ docker-compose up
 And then: 
 
 ```
-docker-compose run `project_name_service` bundle exec rake db:migrate
+docker-compose run [PROJECT_NAME_SERVICE] bundle exec rake db:migrate
 ```
 
-Like:
+In our case:
 
 ```
 docker-compose run bionexo_ubs_api bundle exec rake db:migrate
@@ -120,13 +131,13 @@ docker-compose run bionexo_ubs_api bundle exec rake db:migrate
 ## Getting Started
 
 With the project running, access on your browser [localhost](http:localhost:3000) (Default localhost)
-On your root path (first screen) you will see an input field to upload an CSV file, you can get the CSV on 
-[this site](http://www.dados.gov.br/dataset/ubs_funcionamento) or in your root directory, a file with name: `default_hospitals.csv`.
+You will see an input field to upload an CSV file.
+Upload the file that is on the root directory of the project with name: default_hospitals.csv
 
-Upload this file on input and save them.
+Upload the file and import them.
 
 That's all :)
-You loaded your database with all Ubs's around Brazil.
+You populate your database with all Ubs's around Brazil.
 
 ## Authors
 
