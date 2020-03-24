@@ -27,7 +27,7 @@ After install the project dependecies. Open the terminal and run (inside the pro
 gem install bundler
 ```
 
-Install gems dependencies:
+Install gems dependencies: 
 
 ```
 bundle install
