@@ -1,5 +1,5 @@
 FactoryBot.define do
-	factory :hospital, class: Hospital do
+  factory :hospital, class: Hospital do
     name { Faker::Name.name }
     address { Faker::Address.street_address }
     city { Faker::Address.city }
