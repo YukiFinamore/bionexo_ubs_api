@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'pry'
 
 describe Api::V1::HospitalsController, type: :controller do
   let!(:hospitals) { create_list(:hospital, 5, geocode_lat: "-23.5428363", geocode_long: "-46.637257") }
