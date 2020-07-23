@@ -5,11 +5,9 @@ describe Api::V1::HospitalsController, type: :controller do
   describe 'GET #index' do
     let!(:hospitals) { create_list(:hospital, 5, geocode_lat: "-23.5428363", geocode_long: "-46.637257") }
 
-    before do
-      get :index
-    end
-
     context 'hospital methods successful' do
+      before { get :index }
+
       let!(:parse_response) { JSON.parse(response.body) }
       let(:serialized_items) do
         ActiveModel::Serializer::CollectionSerializer.new(hospitals, serializer: HospitalSerializer).to_json
